@@ -1,5 +1,23 @@
 <template>
   <div id="app">
+
+     <div class="container">
+      <div class="row mb-5">
+        <div class="col-5">
+          <input class="form-control" type="file" accept="text/plain" id="formFile">
+          <p class="text-danger">Yalnızca txt uzantılı dosyalar seçilebilir!</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row mt-5">
+        <div class="col-10">
+          <div class="form-floating">
+            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+          </div>
+        </div>
+        
+      </div>
+    </div> 
     
   </div>
 </template>
