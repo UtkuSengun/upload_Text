@@ -1,63 +1,21 @@
 <template>
   <div id="app">
-
-     <div class="container">
-      <div class="row mb-5">
-        <div class="col-5">
-          <input class="form-control" type="file" accept="text/plain" id="formFile">
-          <p class="text-danger">Yalnızca txt uzantılı dosyalar seçilebilir!</p>
-        </div>
-      </div>
-      <hr>
-      <div class="row mt-5">
-        <div class="col-10">
-          <div class="form-floating">
-            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-          </div>
-        </div>
-        
-      </div>
-    </div> 
-    
+		<text-read @loading="text = $event"></text-read>
+    <br>
+    <div class="container">
+      <textarea class="form-control"  style="height: 500px"  v-model="text"></textarea>
+    </div>
   </div>
 </template>
-
 <script>
+import TextRead from "./components/TextRead.vue";
+
 export default {
-  name: 'app',
-  data () {
-    return {
-      
-    }
+  name: "app",
+  data: () => ({ text: "" }),
+  components: {
+    TextRead
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
