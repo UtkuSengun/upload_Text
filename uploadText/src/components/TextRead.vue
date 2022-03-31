@@ -5,10 +5,7 @@
     <p class="text-danger">Yalnızca txt uzantılı dosyalar seçilebilir!</p>
   </label>
 </div>
-  
-
 </template>
-
 <script>
 export default {
   methods: {
