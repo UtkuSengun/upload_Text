@@ -23,7 +23,7 @@ export default {
     loadFile(ev) {
       const file = ev.target.files[0];
       const reader = new FileReader();
-      reader.onload = e => this.$emit("loading", e.target.result);
+      reader.onload = e => this.$emit("onLoaded", e.target.result);
       reader.readAsText(file);
     }
   },
