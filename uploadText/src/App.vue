@@ -3,7 +3,8 @@
 		<text-read @onLoaded="handleTextLoaded"></text-read>
     <br>
     <div class="container">
-      <div class="row m-3">
+      <textarea class="form-control"  style="height: 300px"  v-model="text"></textarea>
+    <div class="row m-3">
         <div class="col-5">
             <input class="form-control form-control-sm" type="text" placeholder="Aranan" v-model="searchKeyword">
         </div>
@@ -14,7 +15,6 @@
             <button type="button" class="btn btn-success btn-sm px-5 fw-bold" @click="handleReplaceText">Değiştir</button>
         </div>
     </div>
-      <textarea class="form-control"  style="height: 300px"  v-model="text"></textarea>
     </div>
   </div>
 </template>

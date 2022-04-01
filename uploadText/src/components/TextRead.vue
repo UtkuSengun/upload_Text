@@ -6,15 +6,10 @@
     </button>
       <p class="text-danger">Yalnızca txt uzantılı dosyalar seçilebilir!</p>
   </label>
-  <form-group  v-if="seen"></form-group>
 </div>
 </template>
 <script>
-import FormGroup from "../components/FormGroup.vue"
 export default {
-  components: {
-    FormGroup
-    },
     data: () =>
     ({
     seen: false
@@ -27,6 +22,5 @@ export default {
       reader.readAsText(file);
     }
   },
-
 }
 </script>
