@@ -15,8 +15,27 @@
             <button type="button" class="btn btn-success btn-sm px-5 fw-bold" @click="handleReplaceText">Değiştir</button>
         </div>
     </div>
+      <table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th scope="col">Tarih</th>
+      <th scope="col">Aranan</th>
+      <th scope="col">Değişen</th>
+      <th scope="col">Etkilenen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{searchKeyword}}</td>
+      <td>{{replaceKeyword}}</td>
+      <td>{{searchKeyword}} - {{replaceKeyword}}</td>
+    </tr>
+  </tbody>
+</table>
+
     </div>
-  </div>
+    </div>
 </template>
 <script>
 import TextRead from "./components/TextRead.vue";
@@ -39,6 +58,18 @@ export default {
     handleReplaceText(){
       let currentText = this.text;
       this.text = currentText.replaceAll(this.searchKeyword,this.replaceKeyword)
+    },
+    handleReplaceText() {
+      localStorage.searchKeyword = this.searchKeyword
+      localStorage.replaceKeyword = this.replaceKeyword
+    }
+  },
+  mounted() {
+    if (localStorage.searchKeyword) {
+      this.searchKeyword = localStorage.searchKeyword;
+    }
+    if (localStorage.replaceKeyword) {
+      this.replaceKeyword = localStorage.replaceKeyword;
     }
   }
 };
